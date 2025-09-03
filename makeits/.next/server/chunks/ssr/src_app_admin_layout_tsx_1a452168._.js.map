@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/lenovol/OneDrive/Desktop/htmlDmo/makeits/src/app/admin/layout.tsx"],"sourcesContent":["import { AppHeader } from '@/components/layout/app-header';\nimport { AdminSidebar } from '@/components/layout/admin-sidebar';\nimport { SidebarProvider } from '@/components/ui/sidebar';\n\nexport default function AdminLayout({ children }: { children: React.ReactNode }) {\n  return (\n    <SidebarProvider>\n      <div className=\"flex min-h-screen w-full\">\n        <AdminSidebar />\n        <div className=\"flex flex-col flex-1\">\n          <AppHeader />\n          <main className=\"flex-1 p-4 sm:p-6\">{children}</main>\n        </div>\n      </div>\n    </SidebarProvider>\n  );\n}\n"],"names":[],"mappings":";;;;AAAA;AACA;AACA;;;;;AAEe,SAAS,YAAY,EAAE,QAAQ,EAAiC;IAC7E,qBACE,8OAAC,mIAAA,CAAA,kBAAe;kBACd,cAAA,8OAAC;YAAI,WAAU;;8BACb,8OAAC,gJAAA,CAAA,eAAY;;;;;8BACb,8OAAC;oBAAI,WAAU;;sCACb,8OAAC,6IAAA,CAAA,YAAS;;;;;sCACV,8OAAC;4BAAK,WAAU;sCAAqB;;;;;;;;;;;;;;;;;;;;;;;AAK/C","debugId":null}}]
+}

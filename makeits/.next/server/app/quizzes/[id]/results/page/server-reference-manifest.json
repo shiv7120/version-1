@@ -1,0 +1,16 @@
+{
+  "node": {
+    "40ea141d857f4d650504bfff745edf4d6680919972": {
+      "workers": {
+        "app/quizzes/[id]/results/page": {
+          "moduleId": "[project]/.next-internal/server/app/quizzes/[id]/results/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/ai/flows/personalized-challenge-suggestions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/quizzes/[id]/results/page": "action-browser"
+      }
+    }
+  },
+  "edge": {}
+}
