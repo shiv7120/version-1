@@ -27,7 +27,7 @@ export default function ChallengeDetailsPage({
   if (!challenge) {
     notFound();
   }
-}
+
   return (
     <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
       <div className="space-y-6">
