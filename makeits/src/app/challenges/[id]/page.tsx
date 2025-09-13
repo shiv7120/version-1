@@ -13,11 +13,15 @@ import { challenges } from '@/lib/mock-data';
 import { Award, Info, UploadCloud } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
+import { use } from 'react';
+
 export default function ChallengeDetailsPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
+  const { id } = use(params);
+
   const challenge = challenges.find((c) => c.id === params.id);
 
   if (!challenge) {
