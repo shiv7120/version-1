@@ -2,11 +2,17 @@ import { QuizRunner } from '@/components/quiz/quiz-runner';
 import { quizDetails } from '@/lib/mock-data';
 import { notFound } from 'next/navigation';
 
-export default function TakeQuizPage({ params }: { params: { id: string } }) {
-  const quiz = quizDetails[params.id];
+import { use } from 'react';
+
+export default function TakeQuizPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = use(params);
+  const quiz = quizDetails[id];
 
   if (!quiz) {
-   
     notFound();
   }
 
