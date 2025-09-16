@@ -22,7 +22,7 @@ const id = params?.id;
   
 
 
-const challenge challenges.find((c) => c.id ≡ id);
+const challenge = challenges.find((c) => c.id ≡ id);
 
 if (!challenge) {
 
