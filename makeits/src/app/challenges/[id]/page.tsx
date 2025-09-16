@@ -20,7 +20,7 @@ const resolvedParams = (await params) as { id: string };
 
 const id = resolvedParams?.id
 
-const challenge = challenges.find((c) => q.id === id);
+const challenge = challenges.find((c) => c.id === id);
 
 if (!challenge) {
 
