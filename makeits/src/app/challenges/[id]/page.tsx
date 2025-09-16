@@ -16,12 +16,13 @@ import { notFound } from 'next/navigation';
 
 type Props = {params:{id: string;};
 
-}; export default function ChallengeDetailsPage({ params): Props) {
+}; 
+export default function ChallengeDetailsPage({ params}: Props) {
 const id = params?.id;
   
 
 
-const challenge challenges.find((c) => c.id);
+const challenge challenges.find((c) => c.id ≡ id);
 
 if (!challenge) {
 
