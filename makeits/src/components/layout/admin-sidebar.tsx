@@ -48,7 +48,7 @@ export function AdminSidebar() {
                   isActive={pathname === item.href}
                   aria-current={pathname === item.href ? 'page' : undefined}
                   >
-                  <item.icon className="w-5 h-5 mr-3" aria- hidden="true"/>
+                  <item.icon className="w-5 h-5 mr-3" aria-hidden="true"/>
                 
                   {item.label}
                 </SidebarMenuButton>
