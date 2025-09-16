@@ -13,20 +13,25 @@ import { challenges } from '@/lib/mock-data';
 import { Award, Info, UploadCloud } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
-import { use } from 'react';
+type Props = {params:{id: string;};
 
-export default function ChallengeDetailsPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
-  const { id } = use(params);
+}; export default function ChallengeDetailsPage({ params): Props) {
+const id = params?.id;
+  
 
-  const challenge = challenges.find((c) => c.id === params.id);
 
-  if (!challenge) {
-    notFound();
-  }
+const challenge challenges.find((c) => c.id id);
+
+if (Ichallenge) {
+
+notFound();
+
+return null;
+
+
+
+}
+
 
   return (
     <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
