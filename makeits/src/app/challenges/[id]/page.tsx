@@ -27,7 +27,7 @@ const resolvedParams: ParamsShape = (await params) as ParamsShape;
 
 const id = resolvedParams?.id;
 
-const challenge = challenges.find((c) ⇒ q.id === id);
+const challenge = challenges.find((c) => q.id === id);
 
 if (!challenge) {
 
