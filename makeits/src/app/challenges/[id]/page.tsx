@@ -14,15 +14,20 @@ import { challenges } from '@/lib/mock-data';
 import { Award, Info, UploadCloud } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
-type Props = {params:{id: string;};
 
-}; 
-export default function ChallengeDetailsPage({ params}: Props) {
-const id = params?.id;
-  
+type ParamsShape = { id: string };
 
+type Props = { params: ParamsShape | Promise<ParamsShape> };
 
-const challenge = challenges.find((c) => c.id);
+export default async function ChallengeDetailsPage({ params }: Props) {
+
+// Ensure params is resolved when Next provides a Promise
+
+const resolvedParams: ParamsShape = (await params) as ParamsShape;
+
+const id = resolvedParams?.id;
+
+const challenge = challenges.find((c) ⇒ q.id === id);
 
 if (!challenge) {
 
@@ -30,10 +35,7 @@ notFound();
 
 return null;
 
-
-
 }
-
 
   return (
     <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
