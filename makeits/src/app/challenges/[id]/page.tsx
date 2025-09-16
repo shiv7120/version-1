@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import React from 'react';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
@@ -20,9 +21,9 @@ const id = params?.id;
   
 
 
-const challenge challenges.find((c) => c.id id);
+const challenge challenges.find((c) => c.id);
 
-if (Ichallenge) {
+if (!challenge) {
 
 notFound();
 
