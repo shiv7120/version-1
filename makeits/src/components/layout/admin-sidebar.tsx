@@ -42,27 +42,35 @@ export function AdminSidebar() {
         <SidebarMenu className="flex-1">
           {navItems.map((item) => (
              <SidebarMenuItem key={item.href}>
-              <Link href={item.href}>
+              <Link href={item.href} legacyBehavior>
+                <a className="block">
                 <SidebarMenuButton
                   isActive={pathname === item.href}
-                  icon={<item.icon />}
-                >
+                  aria-current={pathname === item.href ? 'page' : undefined}
+                  >
+                  <item.icon className="w-5 h-5 mr-3" aria- hidden="true"/>
+                
                   {item.label}
                 </SidebarMenuButton>
+                </a>
               </Link>
             </SidebarMenuItem>
           ))}
         </SidebarMenu>
       </SidebarContent>
       <SidebarFooter>
-         <SidebarMenu>
+        <SidebarMenu>
             <SidebarMenuItem>
-              <Link href="/dashboard">
-                <SidebarMenuButton icon={<ArrowLeft />}>
+              <Link href="/dashboard" legacyBehavior>
+                <a className="block">
+                
+                <SidebarMenuButton> <ArrowLeft className="w-5 h-5 mr-3" aria-hidden="true"/>
                         Back to App
                 </SidebarMenuButton>
+                  </a>
               </Link>
             </SidebarMenuItem>
+              
          </SidebarMenu>
       </SidebarFooter>
     </Sidebar>
