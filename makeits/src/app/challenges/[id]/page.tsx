@@ -14,18 +14,11 @@ import { challenges } from '@/lib/mock-data';
 import { Award, Info, UploadCloud } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
+export default async function ChallengeDetailsPage({ params }: { params: any}){
 
-type ParamsShape = { id: string };
+const resolvedParams = (await params) as { id: string };
 
-type Props = { params: ParamsShape | Promise<ParamsShape> };
-
-export default async function ChallengeDetailsPage({ params }: Props) {
-
-// Ensure params is resolved when Next provides a Promise
-
-const resolvedParams: ParamsShape = (await params) as ParamsShape;
-
-const id = resolvedParams?.id;
+const id = resolvedParams?.id
 
 const challenge = challenges.find((c) => q.id === id);
 
