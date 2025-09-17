@@ -71,7 +71,7 @@ aria-current={pathname === item.href ? 'page': undefined}
       <SidebarMenu>
           {bottomNavItems.map((item) => (
             <SidebarMenuItem key={item.href}>
-              <Link href={item.href} legacyBehaviour>
+              <Link href={item.href} legacyBehavior>
                 <a className="block">
                 <SidebarMenuButton
                   isActive={pathname.startsWith(item.href)}
