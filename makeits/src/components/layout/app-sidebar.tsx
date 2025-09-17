@@ -105,7 +105,7 @@ aria-current={pathname === item.href ? 'page': undefined}
             <Link href="/" legacyBehavior>
               <a className="block">
                 <SidebarMenuButton
-                    variant="ghost"
+                    type Variant = "default" ;
                     size="icon"
                     className="h-8 w-8 shrink-0"
                     tooltip={{ children: 'Logout' }}
