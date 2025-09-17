@@ -49,37 +49,60 @@ export function AppSidebar() {
           <Logo />
         </SidebarHeader>
         <SidebarMenu className="flex-1">
-          {navItems.map((item) => (
-            <SidebarMenuItem key={item.href}>
-               <Link href={item.href}>
-                
-               <SidebarMenuButton
+
+{navItems.map((item) => (
+
+<SidebarMenuItem key={item.href}>
+
+<Link href={item.href}>
+
+<SidebarMenuButton
+
+
 
 isActive={pathname === item.href}
-                 icon={<item.icon/>}>
-                 {item.label}
-               </SidebarMenuButton>
-               </Link>
-            </Sidebarmenu>
+
+icon={<item.icon />}
+  >
+
+{item.label}
+
+</Sidebar MenuButton>
+
+</Link>
+
+</SidebarMenuItem>
+
+))}
+
+</SidebarMenu>
 
       <SidebarMenu>
-          {bottomNavItems.map((item) => (
-            <SidebarMenuItem key={item.href}>
-              <Link href={item.href} legacyBehavior>
-                <a className="block">
-                <SidebarMenuButton
-                  isActive={pathname.startsWith(item.href)}
-                  aria-current={pathname.startsWith(item.href)? 'page': undefined}
-                  >
 
-<item.icon className="w-5 h-5 mr-3" aria-hidden="true" />
-                  {item.label}
-                </SidebarMenuButton>
-                  </a>
-              </Link>
-            </SidebarMenuItem>
-          ))}
-        </SidebarMenu>
+{bottomNavItems.map((item) => (
+
+<SidebarMenuItem key={item.href}>
+
+<Link href={item.href}>
+
+<SidebarMenuButton
+
+
+
+isActive={pathname.startsWith(item.href)}
+
+icon={<item.icon />}
+  >
+
+{item.label}
+
+</SidebarMenuButton>
+
+</Link>
+
+</Sidebar MenuItem>
+  ))}
+</SidebarMenu>
       </SidebarContent>
       <SidebarFooter>
         <div className="flex items-center gap-3 p-2 rounded-md bg-secondary/50">
@@ -96,18 +119,26 @@ isActive={pathname === item.href}
               {currentUser.email}
             </p>
           </div>
-            <Link href="/" legacyBehavior>
-              <a className="block">
-                <SidebarMenuButton
-                    type Variant = "default" ;
-                    size="icon"
-                    className="h-8 w-8 shrink-0"
-                    tooltip={{ children: 'Logout' }}
-                >
-                    <LogOut className="w-4 h-4" aria-hidden="true"/>
-                </SidebarMenuButton>
-                </a>
-            </Link>
+            <Link href="/">
+
+<SidebarMenuButton
+
+
+
+variant="ghost"
+
+size="icon"
+
+className="h-8 w-8 shrink-0"
+
+tooltip={{ children: "Logout" }}
+  >
+
+<Logout />
+
+</SidebarMenuButton>
+
+</Link>
         </div>
       </SidebarFooter>
     </Sidebar>
