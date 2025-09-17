@@ -102,15 +102,17 @@ aria-current={pathname === item.href ? 'page': undefined}
               {currentUser.email}
             </p>
           </div>
-            <Link href="/">
+            <Link href="/" legacyBehavior>
+              <a className="block">
                 <SidebarMenuButton
                     variant="ghost"
                     size="icon"
                     className="h-8 w-8 shrink-0"
                     tooltip={{ children: 'Logout' }}
                 >
-                    <LogOut />
+                    <LogOut className="w-4 h-4" aria-hidden="true"/>
                 </SidebarMenuButton>
+                </a>
             </Link>
         </div>
       </SidebarFooter>
