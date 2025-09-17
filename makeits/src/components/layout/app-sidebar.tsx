@@ -50,27 +50,38 @@ export function AppSidebar() {
         <SidebarMenu className="flex-1">
           {navItems.map((item) => (
             <SidebarMenuItem key={item.href}>
-               <Link href={item.href}>
-                <SidebarMenuButton
-                  isActive={pathname === item.href}
-                  icon={<item.icon />}
-                >
-                  {item.label}
-                </SidebarMenuButton>
+               <Link href={item.href} legacyBehavior>
+                 <a className="block">
+                
+               <SidebarMenuButton
+
+isActive={pathname === item.href}
+
+aria-current={pathname === item.href ? 'page': undefined}
+>
+<item.icon className="w-5 h-5 mr-3" aria-hidden="true" />
+
+{item.label}
+
+</SidebarMenuButton>    </a>
               </Link>
             </SidebarMenuItem>
           ))}
         </SidebarMenu>
-        <SidebarMenu>
+      <SidebarMenu>
           {bottomNavItems.map((item) => (
             <SidebarMenuItem key={item.href}>
-              <Link href={item.href}>
+              <Link href={item.href} legacyBehaviour>
+                <a className="block">
                 <SidebarMenuButton
                   isActive={pathname.startsWith(item.href)}
-                  icon={<item.icon />}
-                >
+                  aria-current={pathname.startsWith(item.href)? 'page': undefined}
+                  >
+
+<item.icon className="w-5 h-5 mr-3" aria-hidden="true" />
                   {item.label}
                 </SidebarMenuButton>
+                  </a>
               </Link>
             </SidebarMenuItem>
           ))}
