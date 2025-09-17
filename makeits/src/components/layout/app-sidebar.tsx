@@ -21,6 +21,7 @@ import {
   LogOut,
 } from 'lucide-react';
 import Link from 'next/link';
+import React from 'react' ;
 import { usePathname } from 'next/navigation';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import { currentUser } from '@/lib/mock-data';
@@ -50,24 +51,17 @@ export function AppSidebar() {
         <SidebarMenu className="flex-1">
           {navItems.map((item) => (
             <SidebarMenuItem key={item.href}>
-               <Link href={item.href} legacyBehavior>
-                 <a className="block">
+               <Link href={item.href}>
                 
                <SidebarMenuButton
 
 isActive={pathname === item.href}
+                 icon={<item.icon/>}>
+                 {item.label}
+               </SidebarMenuButton>
+               </Link>
+            </Sidebarmenu>
 
-aria-current={pathname === item.href ? 'page': undefined}
->
-<item.icon className="w-5 h-5 mr-3" aria-hidden="true" />
-
-{item.label}
-
-</SidebarMenuButton>    </a>
-              </Link>
-            </SidebarMenuItem>
-          ))}
-        </SidebarMenu>
       <SidebarMenu>
           {bottomNavItems.map((item) => (
             <SidebarMenuItem key={item.href}>
